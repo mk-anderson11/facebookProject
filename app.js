@@ -27,11 +27,11 @@ angular.module('News', ['ui.router'])
 	.state('login', {
 	url: '/login',
 	templateUrl: '/login.html',
-	//controller: 'MainCtrl;
+	controller: 'MainCtrl'
     })
 ;
  
-    $urlRouterProvider.otherwise('home'); 
+    $urlRouterProvider.otherwise('login'); 
   }])
   
 
@@ -54,12 +54,15 @@ angular.module('News', ['ui.router'])
     }; 
   }])
 
+
   .controller('MainCtrl', [
   '$scope',
   'postFactory',
   function($scope, postFactory){
-    $scope.posts = postFactory.posts;
-    $scope.test = 'Hello world!'; 
+   
+
+	$scope.posts = postFactory.posts;
+    //$scope.test = 'Hello world!'; 
      /*$scope.posts = [ 
        {title:'Post 1', upvotes:5}, 
        {title:'Post 2', upvotes:6}, 
@@ -76,6 +79,10 @@ angular.module('News', ['ui.router'])
          $scope.title='';
         //$scope.formContent='';
       };
+
+	$scope.LogIn = function(userName){
+		alert(userName);
+	}
 
 	$scope.toLogIn = function() {
 	

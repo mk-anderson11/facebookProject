@@ -15,7 +15,20 @@
        
 	<script type="text/ng-template" id="/login.html">
 
-	<h1>This is the Log In Page</h1>
+	  <div class='container text-center'>
+    <div class='row'>
+    <h1>Log In <small>Book of Faces</small></h1>
+    </div>
+      <form name='userForm' class='row'>
+      <input placeholder='Name' ng-model='UserName' class='input_style col-xs-12 col-sm-6 	col-md-4'/>
+      <input placeholder='Email' ng-model='userEmail' class='col-xs-12 col-sm-6 col-md-3 	input_style'/>
+      <input placeholder='Image Url' ng-model='userURL' class='col-xs-7 col-md-3 input_style'/>
+
+      <a ng-href="#/home" ng-click='LogIn(UserName)' class="btn btn-info" class='col-md-2 col-xs-5'>Add New</a>
+    </form>
+
+
+    </div>
 		
 
 	</script>
